@@ -29,6 +29,17 @@ namespace maqueenPlusV2 {
         AllMotor,
     };
 
+
+    //Servo selection enumeration
+    export enum MyServos {
+        //% block="S1"
+        S1 = 1,
+        //% block="S2"
+        S2 = 2,
+        //% block="S3"
+        S3 = 3
+    }
+
     //PID interruption
     export enum MyInterruption {
         //% block="Allow interruption"
@@ -258,6 +269,33 @@ namespace maqueenPlusV2 {
     }
 
     /**
+     * Servo control module
+     */
+    //% weight=40
+    //% block="servo|%index|angle|%angle"
+    //% angle.min=0  angle.max=180
+    export function servoRun(index: MyServosServos, angle: number): void {
+        let buf = pins.createBuffer(2)
+        switch (index) {
+            case 1:
+                buf[0] = 0x14;
+                buf[1] = angle;
+                pins.i2cWriteBuffer(0x10, buf);
+                break;
+            case 2:
+                buf[0] = 0x15;
+                buf[1] = angle;
+                pins.i2cWriteBuffer(0x10, buf);
+                break;
+            default:
+                buf[0] = 0x16;
+                buf[1] = angle;
+                pins.i2cWriteBuffer(0x10, buf);
+                break;
+        }
+    }
+
+    /**
      * Control left and right LED light switch module
      * @param eled LED lamp selection
      * @param eSwitch Control LED light on or off
@@ -359,6 +397,7 @@ namespace maqueenPlusV2 {
         }
         return data;
     }
+
     function mydelayUs(unit: number):void{
         let i
         while((--unit)>0){
@@ -366,6 +405,7 @@ namespace maqueenPlusV2 {
             } 
         }
     }
+
     /**
      * Acquiring ultrasonic data
      * @param trig trig pin selection enumeration, eg:DigitalPin.P13
@@ -717,6 +757,7 @@ namespace maqueenPlusV2 {
         //% block="All"
         All = 3,
     }
+
     export enum DirectionType2 {
         //% block="Left"
         Left = 1,
