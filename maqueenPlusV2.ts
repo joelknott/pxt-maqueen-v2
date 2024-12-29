@@ -15,7 +15,7 @@ const enum PatrolSpeed {
 /**
  * Custom graphic block
  */
-//% weight=100 color=#0fbc11 icon="\uf067" block="maqueenPlusV2"
+//% weight=100 color=#0fbc11 icon="\uf067" block="JK MaqueenPlusV2"
 //% groups="['V3']"
 namespace maqueenPlusV2 {
 
