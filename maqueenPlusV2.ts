@@ -6,7 +6,7 @@ const enum PatrolSpeed {
     Speed2 = 2,
     //% block="3"
     Speed3 = 3,
-    //% block="4"maqueenPlusV2.readLightIntensity(DirectionType.Left)
+    //% block="4"
     Speed4 = 4,
     //% block="5"
     Speed5 = 5,
@@ -17,7 +17,7 @@ const enum PatrolSpeed {
  */
 //% weight=100 color=#0fbc11 icon="\uf067" block="JK MaqueenPlusV2"
 //% groups="['V3']"
-namespace maqueenPlusV2 {
+namespace JKmaqueenPlusV2 {
 
     //Motor selection enumeration
     export enum MyEnumMotor {
@@ -274,7 +274,7 @@ namespace maqueenPlusV2 {
     //% weight=40
     //% block="servo|%index|angle|%angle"
     //% angle.min=0  angle.max=180
-    export function servoRun(index: MyServosServos, angle: number): void {
+    export function servoRun(index: MyServos, angle: number): void {
         let buf = pins.createBuffer(2)
         switch (index) {
             case 1:
@@ -817,7 +817,7 @@ namespace maqueenPlusV2 {
      * ...
      * @param mode to mode ,eg: Intersection.Straight
      */
-    maqueenPlusV2.setRightOrStraightRunMode(RightOrStraight.Straight)
+    JKmaqueenPlusV2.setRightOrStraightRunMode(RightOrStraight.Straight)
     //% block="At Crossroads %mode"
     //% weight=22
     //% group="V3"

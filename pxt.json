@@ -1,5 +1,5 @@
 {
-    "name": "maqueenPlusV2",
+    "name": "JKmaqueenPlusV2",
     "version": "2.2.16",
     "description": "This is the latest version of Maqueen Plus, a programming robot for STEAM education.",
     "license": "MIT",
@@ -11,12 +11,6 @@
     },
     "files": [
         "README.md",
-        "_locales/zh-cn/maqueenPlusV2-strings.json",
-        "_locales/zh-cn/maqueenPlusV2-jsdoc-strings.json",
-        "_locales/zh-tw/maqueenPlusV2-strings.json",
-        "_locales/cs/maqueenPlusV2-strings.json",
-        "_locales/cs/maqueenPlusV2-jsdoc-strings.json",
-        "_locales/fr/maqueenPlusV2-strings.json",
         "maqueenPlusV2.ts"
     ],
     "testFiles": [
